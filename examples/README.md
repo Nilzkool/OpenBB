@@ -39,6 +39,14 @@ This set of examples introduces financial statements in the OpenBB Platform and 
 - Financial attributes
 - Ratios and other metrics
 
+### Portfolio Optimization Using Modern Portfolio Theory
+
+This notebook utilizes OpenBB’s data for portfolio optimization based on Modern Portfolio Theory (MPT) principles. It performs a mean-variance analysis to construct an optimal portfolio of top 10 crypto assets over a specified period.
+
+- Fetch historical price data and calculate expected returns and covariance
+- Use the Critical Line Algorithm for efficient frontier optimization
+- Generate portfolio weights and visualize the results
+
 ### copperToGoldRatio
 
 This notebook explains how to calculate and plot the Copper-to-Gold ratio.

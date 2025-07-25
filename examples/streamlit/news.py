@@ -44,7 +44,6 @@ body {
     unsafe_allow_html=True,
 )
 
-
 button_pressed = False
 
 SUPPORTED_SOURCES = ["benzinga", "biztoc", "intrinio", "fmp", "tiingo"]
@@ -86,20 +85,6 @@ if "news_end_date" not in st.session_state:
     st.session_state.news_end_date = datetime.now().date()
 if "selected_biztoc_source" not in st.session_state:
     st.session_state.selected_biztoc_source = ""
-if "content_type" not in st.session_state:
-    st.session_state.content_type = "news"
-if "benzinga_tickers" not in st.session_state:
-    st.session_state.benzinga_tickers = ""
-if "selected_benzinga_channel" not in st.session_state:
-    st.session_state.selected_benzinga_channel = ""
-if "fmp_tickers" not in st.session_state:
-    st.session_state.fmp_tickers = ""
-if "intrinio_tickers" not in st.session_state:
-    st.session_state.intrinio_tickers = ""
-if "tiingo_tickers" not in st.session_state:
-    st.session_state.tiingo_tickers = ""
-if "tiingo_source" not in st.session_state:
-    st.session_state.tiingo_source = ""
 
 
 def fetch_openbb():
@@ -298,19 +283,9 @@ def main():
                         )
 
                         if st.session_state.selected_provider == "Benzinga":
-                            _tags = (
-                                st.session_state.news.loc[i].tags
-                                if st.session_state.news.loc[i].get("tags")
-                                else ""
-                            )
-                            _stocks = (
-                                st.session_state.news.loc[i].stocks
-                                if st.session_state.news.loc[i].get("stocks")
-                                else ""
-                            )
-                            _channels = (
-                                st.session_state.news.loc[i].channels
-                                if st.session_state.news.loc[i].get("channels")
+                            _symbols = (
+                                st.session_state.news.loc[i].symbols
+                                if st.session_state.news.loc[i].get("symbols")
                                 else ""
                             )
                             _images = (
@@ -342,16 +317,8 @@ def main():
                                 st.markdown(text, unsafe_allow_html=True)
                             st.divider()
                             st.write(_url)
-                            if _tags:
-                                st.markdown(
-                                    f"##### Tags for this story:  \n {_tags}  \n"
-                                )
-                            if _stocks and _stocks is not nan:
-                                st.markdown(f"##### Stocks mentioned:\n {_stocks}  \n")
-                            if _channels:
-                                st.markdown(
-                                    f"##### Channels for this story:  \n {_channels}  \n"
-                                )
+                            if _symbols:
+                                st.markdown(f"##### Symbols: {_symbols}  \n")
 
                         if st.session_state.selected_provider == "Biztoc":
                             if st.session_state.news.loc[i].get("images") not in [
@@ -381,25 +348,20 @@ def main():
                                 )
 
                         if st.session_state.selected_provider == "Intrinio":
-                            _tags = st.session_state.news.loc[i].get("tags")
-                            _stocks = (
-                                st.session_state.news.loc[i]["company"].get("ticker")
-                                if st.session_state.news.loc[i].get("company")
-                                else None
-                            )
+                            _symbols = st.session_state.news.loc[i].get("symbols")
                             _images = st.session_state.news.loc[i].get("images")
                             _url = st.session_state.news.loc[i].get("url")
-                            st.markdown(text, unsafe_allow_html=True)
+                            if text:
+                                st.markdown(text, unsafe_allow_html=True)
                             if _url:
                                 st.write(_url)
-                            if _stocks and _stocks is not nan:
+                            if _symbols and _symbols is not nan:
                                 st.divider()
-                                st.markdown(f"##### Stocks mentioned:\n {_stocks}  \n")
+                                st.markdown(f"##### Symbols: {_symbols}  \n")
 
                         if st.session_state.selected_provider == "FMP":
                             _url = st.session_state.news.loc[i].get("url")
                             _images = st.session_state.news.loc[i].get("images")
-                            _symbols = st.session_state.news.loc[i].get("symbols")
                             img = (
                                 _images[0].get("o") or _images[0].get("url")
                                 if _images
@@ -423,7 +385,7 @@ def main():
                         if st.session_state.selected_provider == "Tiingo":
                             _url = st.session_state.news.loc[i].get("url")
                             _tags = st.session_state.news.loc[i].get("tags")
-                            _stocks = st.session_state.news.loc[i].get("symbols")
+                            _symbols = st.session_state.news.loc[i].get("symbols")
                             if _url:
                                 st.write(_url)
                             st.divider()
@@ -431,8 +393,8 @@ def main():
                                 st.markdown(
                                     f"##### Tags for this story:  \n {_tags}  \n"
                                 )
-                            if _stocks and _stocks is not nan:
-                                st.markdown(f"##### Stocks mentioned:\n {_stocks}  \n")
+                            if _symbols and _symbols is not nan:
+                                st.markdown(f"##### Symbols: {_symbols}  \n")
 
             st.divider()
         st.write(
