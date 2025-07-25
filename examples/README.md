@@ -4,6 +4,13 @@ This folder is a collection of example notebooks that demonstrate some of the wa
 
 ## Table of Contents
 
+### portfolioOptimizationUsingModernPortfolioTheory
+This notebook utilizes OpenBB’s data for portfolio optimization based on Modern Portfolio Theory (MPT) principles.
+- Fetches historical price data for top crypto assets over a one-year period.
+- Calculates expected returns and covariance matrix using PyPortfolioOpt.
+- Constructs the efficient frontier via the Critical Line Algorithm.
+- Identifies and visualizes the maximum Sharpe-ratio portfolio weights.
+
 ### googleColab
 
 This notebook installs the OpenBB Platform in a Google Colab environment with examples for:
@@ -50,7 +57,7 @@ This notebook explains how to calculate and plot the Copper-to-Gold ratio.
 
 ### openbbPlatformAsLLMTools
 
-This notebook shows you how you can use OpenbB Platform as functions in an LLM by leveraging function calling.
+This notebook shows you how you can use OpenBB Platform as functions in an LLM by leveraging function calling.
 
 - Create an LLM tool from an OpenBB Platform function
 - Convert all OpenBB Platform functions to LLM tools
