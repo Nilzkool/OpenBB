@@ -4,6 +4,9 @@ This folder is a collection of example notebooks that demonstrate some of the wa
 
 ## Table of Contents
 
+### portfolioOptimizationUsingModernPortfolioTheory
+Demonstrates portfolio optimization using Modern Portfolio Theory with OpenBB data and PyPortfolioOpt.
+
 ### googleColab
 
 This notebook installs the OpenBB Platform in a Google Colab environment with examples for:
