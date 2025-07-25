@@ -1,3 +1,7 @@
 streamlit
 openbb
 openbb-biztoc
+openbb-benzinga
+openbb-fmp
+openbb-intrinio
+openbb-tiingo

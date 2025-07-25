@@ -57,6 +57,10 @@ This notebook shows you how you can use OpenbB Platform as functions in an LLM b
 - Build a basic Langchain agent that can utilize function calling
 - Run the agent
 
+### Portfolio Optimization Using Modern Portfolio Theory
+
+This notebook utilizes OpenBB’s data for portfolio optimization based on Modern Portfolio Theory principles. We optimize a portfolio of top 10 crypto assets using daily close data over a one-year period and visualize the efficient frontier and optimal allocations.
+
 ### usdLiquidityIndex
 
 This notebook demonstrates how to query the Federal Reserve Economic Database and recreate the USD Liquidity Index.
