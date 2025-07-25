@@ -1,4 +1,4 @@
 target:  
   - url: "examples/"
 include: ["openbb_platform/openbb", "openbb_platform/core"]
-reinit: "random-string"
+reinit: "trigger2"
