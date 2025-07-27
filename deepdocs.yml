@@ -1,4 +1,4 @@
 target:  
   - url: "examples/"
 include: ["openbb_platform/openbb", "openbb_platform/core"]
-reinit: "trigger13"
+reinit: "trigger14"
