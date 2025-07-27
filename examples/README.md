@@ -78,6 +78,17 @@ This notebook demonstrates how to calculate the implied earnings move using opti
 - Find the nearest call and put strikes to the last price of the stock.
 - Calculate the implied daily move using the price of a straddle.
 
+### Portfolio Optimization Using Modern Portfolio Theory
+
+This notebook utilizes OpenBB’s data for portfolio optimization based on mean-variance Modern Portfolio Theory (MPT) principles. It demonstrates:
+
+- Fetching and preparing historical price data for the top 10 cryptocurrencies.
+- Calculating expected returns and covariance with the Ledoit–Wolf shrinkage estimator.
+- Building a Critical Line Algorithm (CLA) object to compute the efficient frontier.
+- Identifying the maximum Sharpe ratio portfolio and visualizing allocations.
+
+Link: [Portfolio Optimization Using Modern Portfolio Theory](./portfolioOptimizationUsingModernPortfolioTheory.ipynb)
+
 ### streamlit/news
 
 This is an example Streamlit dashboard for news headlines with data from Biztoc, Benzinga, FMP, Intrinio, and Tiingo.
