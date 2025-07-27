@@ -57,6 +57,16 @@ This notebook shows you how you can use OpenbB Platform as functions in an LLM b
 - Build a basic Langchain agent that can utilize function calling
 - Run the agent
 
+### portfolioOptimizationUsingModernPortfolioTheory
+
+This notebook demonstrates portfolio optimization using Modern Portfolio Theory (MPT):
+
+- Fetching historical asset price data for a selection of assets
+- Calculating annualized expected returns
+- Computing the covariance matrix using the Ledoit-Wolf shrinkage estimator
+- Building and plotting the efficient frontier via the Critical Line Algorithm (CLA)
+- Determining and visualizing the optimum weights for maximum Sharpe ratio
+
 ### usdLiquidityIndex
 
 This notebook demonstrates how to query the Federal Reserve Economic Database and recreate the USD Liquidity Index.
